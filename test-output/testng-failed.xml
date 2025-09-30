@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" name="Failed suite [ParaBank Test Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="browser" value="chrome"/>
+  <listeners>
+    <listener class-name="com.parabank.listeners.TestListener"/>
+  </listeners>
+  <test thread-count="1" name="All Tests(failed)">
+    <classes>
+      <class name="com.parabank.tests.TransferTests">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="transferTransactionHistory" invocation-numbers="0 1"/>
+        </methods>
+      </class> <!-- com.parabank.tests.TransferTests -->
+      <class name="com.parabank.tests.BillPayTests">
+        <methods>
+          <include name="paymentHistory" invocation-numbers="0 1"/>
+          <include name="setUp"/>
+          <include name="billPayScenarios" invocation-numbers="1"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.parabank.tests.BillPayTests -->
+      <class name="com.parabank.tests.LoginTests">
+        <methods>
+          <include name="testSuccessfulLogin" invocation-numbers="0"/>
+          <include name="testLogout" invocation-numbers="0"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.parabank.tests.LoginTests -->
+      <class name="com.parabank.tests.AccountTests">
+        <methods>
+          <include name="setUp"/>
+          <include name="verifyAccountOverview" invocation-numbers="0"/>
+          <include name="verifyAccountDetailsPage" invocation-numbers="0"/>
+          <include name="verifyActivityFiltering" invocation-numbers="0"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.parabank.tests.AccountTests -->
+      <class name="com.parabank.tests.LoanTests">
+        <methods>
+          <include name="setUp"/>
+          <include name="findTransactions" invocation-numbers="0 1"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.parabank.tests.LoanTests -->
+    </classes>
+  </test> <!-- All Tests(failed) -->
+</suite> <!-- Failed suite [ParaBank Test Suite] -->

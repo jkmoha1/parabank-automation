@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ParaBank Test Suite" parallel="none" thread-count="1">
+
+    <!-- Global browser parameter (overridable via -Dbrowser=chrome) -->
+    <parameter name="browser" value="chrome"/>
+
+    <listeners>
+        <listener class-name="com.parabank.listeners.TestListener"/>
+    </listeners>
+
+    <test name="All Tests">
+        <classes>
+            <class name="com.parabank.tests.LoginTests"/>
+            <class name="com.parabank.tests.RegistrationTests"/>
+            <class name="com.parabank.tests.AccountTests"/>
+            <class name="com.parabank.tests.TransferTests"/>
+            <class name="com.parabank.tests.BillPayTests"/>
+            <class name="com.parabank.tests.LoanTests"/>
+        </classes>
+    </test>
+</suite>
